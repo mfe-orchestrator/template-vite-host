@@ -8,6 +8,12 @@ export default defineConfig({
     react(),
     federation({
       name: 'app',
+      // A host is consumable as a remote too: the orchestrator serves this file
+      // at assets/remoteEntry.js, which is what the catalogue entry declares.
+      filename: 'remoteEntry.js',
+      exposes: {
+        './App': './src/App.jsx'
+      },
       remotes: {
         
       },

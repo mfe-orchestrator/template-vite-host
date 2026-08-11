@@ -1,0 +1,7 @@
+# Dependency build scripts must be approved explicitly, otherwise "pnpm install"
+# stops with ERR_PNPM_IGNORED_BUILDS. Both keys are here on purpose: pnpm 10
+# reads onlyBuiltDependencies, pnpm 11 reads allowBuilds.
+allowBuilds:
+  esbuild: true
+onlyBuiltDependencies:
+  - esbuild
