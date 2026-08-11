@@ -9,7 +9,8 @@ marketplace as `vite-host-react`. Vite + React 19 + Module Federation, wired as 
 - [pnpm](https://pnpm.io) 10 or newer
 
 > [!NOTE]
-> The client SDK is required at `^0.1.0`. A caret on a `0.x` version is deliberately narrow: it
+> The client SDK is required at `^0.1.1`, the first version where the environment is optional. A
+> caret on a `0.x` version is deliberately narrow: it
 > accepts `0.1.x` only, **not** `0.2.0`. The SDK is new and parts of its API are still settling, so
 > that is the intended level of caution — the cost is that you have to widen this range yourself
 > when the SDK moves to `0.2.0`, otherwise `pnpm install` fails to resolve it.

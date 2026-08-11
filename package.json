@@ -11,15 +11,15 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@mfe-orchestrator-hub/client": "^0.1.0",
+    "@mfe-orchestrator-hub/client": "^0.1.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
+    "@originjs/vite-plugin-federation": "^1.4.1",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "@vitejs/plugin-react": "^5.0.4",
-    "vite": "^8.2.1",
-    "@originjs/vite-plugin-federation": "^1.4.1"
+    "vite": "^8.2.1"
   }
 }
