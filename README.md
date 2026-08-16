@@ -32,14 +32,14 @@ pnpm build      # production build into dist/
 ├── nginx/no-cache.conf
 ├── index.html
 ├── src/
-│   ├── App.jsx         # shell, exposed to the orchestrator as ./App
+│   ├── App.tsx         # shell, exposed to the orchestrator as ./App
 │   ├── App.css
 │   ├── index.css
-│   └── main.jsx        # configure() lives here
+│   └── main.tsx        # configure() lives here
 ├── .env.example
 ├── package.json
 ├── pnpm-workspace.yaml
-└── vite.config.js      # federation config
+└── vite.config.ts      # federation config
 ```
 
 ## How the orchestrator is wired in
@@ -51,7 +51,7 @@ canaries exist.
 
 Two pieces make that work.
 
-**1. `configure()`, at the very top of the entry point (`src/main.jsx`), synchronously, before
+**1. `configure()`, at the very top of the entry point (`src/main.tsx`), synchronously, before
 anything imports a remote:**
 
 ```js
@@ -75,13 +75,13 @@ spread is there for exactly that: it is the difference between "no environment" 
 whose name is the empty string". Set `VITE_MFE_ENVIRONMENT` only when you want to pin the
 environment explicitly — for instance when several environments are served from the same domain.
 
-**2. The remotes, declared in `vite.config.js` as promises that resolve to a URL:**
+**2. The remotes, declared in `vite.config.ts` as promises that resolve to a URL:**
 
 ```js
 federation({
   name: 'app',
   filename: 'remoteEntry.js',
-  exposes: { './App': './src/App.jsx' },
+  exposes: { './App': './src/App.tsx' },
   remotes: {
     exampleremote: {
       external: `import('@mfe-orchestrator-hub/client').then(m => m.remoteUrl('example-remote'))`,
@@ -118,7 +118,7 @@ Copy `.env.example` to `.env` and fill it in. Vite injects them at build time.
 `pnpm build` writes to `dist/`. The federation entry lands at **`dist/assets/remoteEntry.js`**,
 which is the `entryPoint` the marketplace entry declares.
 
-Check it after any change to `vite.config.js`: the orchestrator serves exactly that path, so a
+Check it after any change to `vite.config.ts`: the orchestrator serves exactly that path, so a
 build that puts the entry somewhere else is broken.
 
 ## Deploying

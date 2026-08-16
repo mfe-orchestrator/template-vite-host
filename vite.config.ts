@@ -12,7 +12,7 @@ export default defineConfig({
       // at assets/remoteEntry.js, which is what the catalogue entry declares.
       filename: 'remoteEntry.js',
       exposes: {
-        './App': './src/App.jsx'
+        './App': './src/App.tsx'
       },
       remotes: {
         // One entry per microfrontend this host consumes. Empty on purpose: a
