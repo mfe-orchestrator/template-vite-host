@@ -6,7 +6,7 @@ marketplace as `vite-host-react`. Vite + React 19 + Module Federation, wired as 
 ## Requirements
 
 - Node.js 20 or newer
-- [pnpm](https://pnpm.io) 10 or newer
+- [pnpm](https://pnpm.io) 12 (pinned in `packageManager`; `corepack enable` picks it up)
 
 > [!NOTE]
 > The client SDK is required at `^0.1.1`, the first version where the environment is optional. A
