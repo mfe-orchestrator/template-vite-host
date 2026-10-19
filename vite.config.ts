@@ -15,12 +15,12 @@ export default defineConfig({
         './App': './src/App.tsx'
       },
       remotes: {
-        // One entry per microfrontend this host consumes. Empty on purpose: a
+        // One entry per frontend this host consumes. Empty on purpose: a
         // freshly scaffolded host consumes nothing yet, you add the remotes you
         // need here.
         //
         // The key is the federation-safe name you import from ("exampleremote/Button").
-        // The string passed to remoteUrl() is the *slug* of the microfrontend in the
+        // The string passed to remoteUrl() is the *slug* of the frontend in the
         // orchestrator.
         //
         // Never write a URL here. The host does not choose the version it gets: the

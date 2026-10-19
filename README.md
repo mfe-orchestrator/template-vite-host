@@ -93,9 +93,9 @@ federation({
 ```
 
 `remotes` ships empty: a freshly scaffolded host consumes nothing yet. Add one entry per
-microfrontend you consume. The key is the federation-safe name you import from
+frontend you consume. The key is the federation-safe name you import from
 (`exampleremote/Button`), and the string passed to `remoteUrl()` is the **slug** of the
-microfrontend in the orchestrator. `remoteUrl(slug)` returns the URL the backend resolved for it,
+frontend in the orchestrator. `remoteUrl(slug)` returns the URL the backend resolved for it,
 already pinned to a version. Never write a URL there by hand.
 
 The SDK also exposes `manifest()`, `globalVariables()` and `identities()` if you need to see what
